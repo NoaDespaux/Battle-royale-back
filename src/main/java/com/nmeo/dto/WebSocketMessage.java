@@ -8,4 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class WebSocketMessage {
     public MessageType type;
     public UUID socketUuid;
+    public String gameId;
+    public String gameName;
 }

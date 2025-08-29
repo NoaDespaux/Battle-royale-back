@@ -30,8 +30,10 @@ public class SocketHandler {
             case NEW_PLAYER:
                 break;
             case NEW_GAME:
+                broadcastService.newGame(logger, ctx, newMessage, gameService, newMessage.gameId, newMessage.gameName);
                 break;
             case LIST_GAME:
+                broadcastService.listGames(logger, gameService, ctx);
                 break;
             case PLAYER_MOVED:
                 break;

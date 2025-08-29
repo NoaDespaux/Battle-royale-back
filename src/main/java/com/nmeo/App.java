@@ -1,5 +1,6 @@
 package com.nmeo;
 
+import com.nmeo.services.GameServiceSingleton;
 import io.javalin.Javalin;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +13,7 @@ public class App {
     private static final Logger logger = LogManager.getLogger(App.class.getName());
     public static void main(String[] args) {
         logger.info("Starting the app");
-        GameService gameService = new GameService();
+        GameService gameService = GameServiceSingleton.getInstance();
         BroadcastService broadcastService = new BroadcastService();
 
         int port = System.getenv("SERVER_PORT") != null? Integer.parseInt(System.getenv("SERVER_PORT")) : 8080;
